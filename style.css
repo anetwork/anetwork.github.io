@@ -1,0 +1,106 @@
+/**
+ * ##### 110110011000011011011000101101011101100010110001001000001101100110000101110110011000011000100000110110001010011111011001100001001101100110000100110110011000011100100000110110011000100000100000110110011000000111011000101010101101100010101101001000001101100110000010110110001011000111011011100011001101100010101000
+ *
+ * @since 2016/04
+ * @author Reiha Hosseini ( @mrReiha ) <iam@reiha.net>
+ */
+@import url(https://fonts.googleapis.com/css?family=Raleway:100);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    background: #f1f1f1;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cont {
+    margin: auto;
+    width: 960px;
+    counter-reset: projects;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    margin: 100px auto;
+    color: #5A2C81;
+    text-shadow: 0 1px 0 #fff;
+    text-align: center;
+    font-weight: 100;
+    font-size: 60px;
+}
+
+li {
+    list-style: none;
+}
+
+li a {
+    position: relative;
+    display: block;
+    padding-left: 65px;
+}
+
+li a span {
+    background: #fff;
+    box-shadow: 0 1px 2px rgba( 0, 0, 0, .4 );
+    padding: 15px;
+    font-size: 18px;
+    color: #555;
+    margin: 5px 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 1px 0 #fff;
+}
+
+li a span:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 30%;
+    left: 50%;
+    background: linear-gradient( to left , #5A2C81, #fff, #5A2C81 );
+    transform: scaleX( 1 ) skewX( 15deg );
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: .25s;
+    transition: .25s;
+}
+
+li a:before {
+    counter-increment: projects;
+    content: counter( projects );
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ccc;
+    text-shadow: 0 1px 0 #f1f1f1;
+    color: #777;
+    padding: 15px 25px;
+    box-shadow: 0 1px 2px rgba( 0, 0, 0, .4 );
+    bottom: 0;
+    line-height: 25px;
+}
+
+li a:hover span:after, li a:focus span:after {
+    transform: scaleX( 7 ) skewX( 15deg );
+    opacity: .13;
+    visibility: visible;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
