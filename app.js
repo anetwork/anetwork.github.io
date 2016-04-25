@@ -136,6 +136,8 @@
         projects = d.querySelectorAll( 'li a' ),
         projectsLen = projects.length,
 
+        disabledPreview = Math.max( Math.min( screen.availWidth, innerWidth ), 0 ) < 600,
+
         lastActiveItemPos,
         lastActiveItemFull,
 
@@ -145,7 +147,7 @@
 
     len = projectsLen;
 
-    while ( len-- )
+    while ( !disabledPreview && len-- )
         projects[ len ].addEventListener( 'click', fullscreenProject, false );
 
 })( this, document );

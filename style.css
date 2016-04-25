@@ -32,15 +32,40 @@ html, body, ul, li {
     padding: 0;
 }
 
+body {
+    padding-bottom: 80px;
+}
+
 a {
     text-decoration: none;
     color: inherit;
     outline: 0;
 }
 
+.right { float: right; }
+.left { float: left; }
+
 .cont {
     margin: auto;
     width: 960px;
+}
+
+.button {
+    margin: 15px 0;
+    border: 2px solid #5A2C81;
+    padding: 15px 25px;
+    font-size: 18px;
+    color: #5A2C81;
+}
+.button:hover, .button:focus {
+    box-shadow: 0 0 10px -3px rgba( 90, 44, 129, .75 ) inset;
+}
+
+.button.left + .button.left {
+    margin-left: 10px;
+}
+.button.right + .button.right {
+    margin-right: 10px;
 }
 
 h1, h2 {
@@ -165,6 +190,9 @@ li a:before {
 }
 
 li a:hover:before, li a:focus:before {
+    -webkit-transform: scale( 1.4 ) translateZ( 0 );
+    -moz-transform: scale( 1.4 ) translateZ( 0 );
+    -ms-transform: scale( 1.4 ) translateZ( 0 );
     transform: scale( 1.4 ) translateZ( 0 );
 }
 li a:hover .project:after, li a:focus .project:after {
@@ -176,4 +204,69 @@ li a:hover .project:after, li a:focus .project:after {
     visibility: visible;
     -webkit-transition: .4s;
     transition: .4s;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+    background: #fff;
+    color: #777;
+}
+
+footer nav a + a:before {
+    content: '-';
+    padding: 0 20px;
+    color: #999;
+}
+
+footer nav a:hover, footer nav a:focus {
+    color: #222;
+}
+
+footer nav a img {
+    vertical-align: middle;
+}
+
+footer nav a + a.right:before {
+    content: '';
+}
+
+@media all and ( max-width: 980px ) {
+
+    .cont {
+        width: 100%;
+        padding: 0 40px;
+    }
+
+}
+
+@media all and ( max-width: 600px ) {
+
+    li a:before {
+        display: none;
+    }
+
+    li a {
+        padding-left: 0;
+    }
+
+    li a:hover .project:after, li a:focus .project:after {
+        -webkit-transform: scaleX( 10 ) skewX( 15deg );
+        -moz-transform: scaleX( 10 ) skewX( 15deg );
+        -ms-transform: scaleX( 10 ) skewX( 15deg );
+        transform: scaleX( 10 ) skewX( 15deg );
+    }
+
+}
+
+@media all and ( max-width: 500px ) {
+
+    body {
+        padding-bottom: 100px;
+    }
+
 }
