@@ -233,6 +233,7 @@ footer nav a img {
 
 footer nav a + a.right:before {
     content: '';
+    display: none;
 }
 
 @media all and ( max-width: 980px ) {
